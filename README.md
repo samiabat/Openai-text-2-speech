@@ -7,13 +7,13 @@ This project demonstrates text-to-speech synthesis using the OpenAI API. It util
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/your-repo.git
+    git clone https://github.com/samiabat/Openai-text-2-speech
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd your-repo
+    cd Openai-text-2-speech
     ```
 
 3. Install dependencies using `pip`:
@@ -36,12 +36,12 @@ This project demonstrates text-to-speech synthesis using the OpenAI API. It util
     python main.py
     ```
 
-    The script will use the specified OpenAI GPT-3 model to generate speech for Japanese, English, and Chinese texts. The generated audio files will be saved in the project directory.
+    The script will use the specified OpenAI model to generate speech for Japanese, English, and Chinese texts. The generated audio files will be saved in the project directory.
 
 ## Configuration
 
-- `model`: Specify the GPT-3 model to use (default is 'tts-1').
-- `voice`: Choose the voice for text-to-speech synthesis.
+- `model`: Specify the name model to use (default is 'tts-1').
+- `voice`: Choose the voice for text-to-speech synthesis the default is alloy.
 - `response_format`: Select the format of the audio response (mp3, opus, aac, and flac).
 
 ## Output
@@ -51,8 +51,3 @@ The generated audio files will be saved in the project directory with filenames 
 - `Japanese_audio.mp3`
 - `English_audio.mp3`
 - `Chinese_audio.mp3`
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-# Desktop-Openai-text-2-speech
