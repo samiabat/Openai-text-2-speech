@@ -25,9 +25,13 @@ This project demonstrates text-to-speech synthesis using the OpenAI API. It util
 ## Usage
 
 1. Set your OpenAI API key as an environment variable:
-
+    ### On linux and mac
     ```bash
-    export API_KEY="your-api-key"
+    export T2S_API_KEY="your-api-key"
+    ```
+    ### On window
+    ```bash
+    set T2S_API_KEY="your-api-key"
     ```
 
 2. Run the `main.py` script:

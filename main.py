@@ -1,7 +1,8 @@
 import os
 from openai import OpenAI
-api_key = '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'
-os.environ['API-KEY'] = api_key
+
+api_key = os.environ['T2S_API_KEY']
+# os.environ['API-KEY'] = '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'
 
 class TextToSpeech:
     """
@@ -36,7 +37,7 @@ class TextToSpeech:
         - model (str): The model identifier for text-to-speech (default is 'tts-1').
         - voice (str): The voice identifier for text-to-speech (default is 'alloy').
         """
-        self.api_key = os.environ.get('API-KEY')
+        self.api_key = api_key
         self.lan_type_mapping  ={0:'Japanese', 1:'English', 2:'Chinese'}
         self.client = OpenAI(api_key = self.api_key)
         self.model = model
@@ -74,8 +75,8 @@ class Synthesizer:
         chinese_text = '你好，我是一个说中文的语言模型。' #Chinnese
 
         model = 'tts-1' #@param ['tts-1', 'tts-1-hd'] {type:"string"}
-        voice = 'nova' #@param ['alloy', 'echo', 'fable', 'onyx', 'nova', 'shimmer'] {type:"string"}
-        response_format = 'mp3' #@param ['mp3', 'opus', 'aac', 'and', 'flac'] {type:"string"}
+        voice = 'shimmer' #@param ['alloy', 'echo', 'fable', 'onyx', 'nova', 'shimmer'] {type:"string"}
+        response_format = 'wav' #@param ['mp3', 'opus', 'aac', 'and', 'flac'] {type:"string"}
 
         model = TextToSpeech(
             model=model, 
