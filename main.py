@@ -45,7 +45,7 @@ class TextToSpeech:
       
 
 
-    def text_to_speech(self, text, lan_type, response_format='wav'):
+    def text_to_speech(self, text, lan_type):
         """
         Converts input text to speech and saves the audio file based on the specified language type and response format.
 
@@ -64,26 +64,38 @@ class TextToSpeech:
               input=text,
               speed=1
             )
-          response.stream_to_file(f'{self.lan_type_mapping[lan_type]}_audio.{response_format}')
+          response.stream_to_file(f'{self.lan_type_mapping[lan_type]}_audio.wav')
         except Exception as e:
           raise e
 
 class Synthesizer:
     def __init__(self):
+        '''
+        Note:
+        - Adjust the 'model', 'voice', and 'response_format' parameters as needed.
+        - The TextToSpeech model instance is created internally for audio synthesis.
+        - Run the script to generate audio files for Japanese, English, and Chinese texts.
+        '''
         japanese_text = 'こんにちは、私は日本語を話す言語モデルです。'#Japanese
         english_text = 'Hello, I am an English speaking language model.' #English
         chinese_text = '你好，我是一个说中文的语言模型。' #Chinnese
 
         model = 'tts-1' #@param ['tts-1', 'tts-1-hd'] {type:"string"}
         voice = 'shimmer' #@param ['alloy', 'echo', 'fable', 'onyx', 'nova', 'shimmer'] {type:"string"}
-        response_format = 'wav' #@param ['mp3', 'opus', 'aac', 'and', 'flac'] {type:"string"}
+        response_format = 'wav' #@param ['mp3', 'opus', 'aac', 'and', 'flac'] {type:"string"} 
 
+        # Initialize TextToSpeech class with parameters.
         model = TextToSpeech(
             model=model, 
             voice = voice
             )
-        model.text_to_speech(japanese_text, 0, response_format)
-        model.text_to_speech(english_text, 1, response_format)
-        model.text_to_speech(chinese_text, 2, response_format)
+        # Generate Japanese audio
+        model.text_to_speech(japanese_text, 0)
+        
+        # Generate English audio
+        model.text_to_speech(english_text, 1)
+        
+        # Generate China audio
+        model.text_to_speech(chinese_text, 2)
 if __name__ == '__main__':
     synthesizer = Synthesizer()
