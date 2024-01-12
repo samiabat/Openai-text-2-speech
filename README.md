@@ -40,9 +40,9 @@ This project demonstrates text-to-speech synthesis using the OpenAI API. It util
 
 ## Configuration
 
-- `model`: Specify the name model to use (default is 'tts-1').
-- `voice`: Choose the voice for text-to-speech synthesis the default is alloy.
-- `response_format`: Select the format of the audio response (mp3, opus, aac, and flac).
+- `model`: Specify the name model to use (default is `tts-1`).
+- `voice`: Choose the voice for text-to-speech synthesis the default is `alloy`.
+- `response_format`: Select the format of the audio response (`mp3`, `opus`, `aac`, and `flac`).
 
 ## Output
 
